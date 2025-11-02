@@ -14,7 +14,7 @@ export default defineConfig({
     reporters: ['verbose'],
     coverage: {
       include: ['packages/*/src/**/*.ts'],
-      reporter: ['text', 'text-summary'],
+      reporter: ['text', 'text-summary', 'json', 'json-summary'],
     },
   },
 })
