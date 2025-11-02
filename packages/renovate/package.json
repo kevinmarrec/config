@@ -1,0 +1,16 @@
+{
+  "name": "@kevinmarrec/renovate-config",
+  "private": true,
+  "description": "Kevin's Renovate config.",
+  "author": "Kevin Marrec <kevin@marrec.io>",
+  "license": "MIT",
+  "homepage": "https://github.com/kevinmarrec/config/packages/renovate#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinmarrec/config.git"
+  },
+  "keywords": [
+    "renovate",
+    "renovate-config"
+  ]
+}

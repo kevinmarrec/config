@@ -1,0 +1,35 @@
+{
+  "description": "Default config",
+  "schedule": ["* 4-9 * * 6"],
+  "timezone": "Europe/Paris",
+  "extends": [
+    ":configMigration",
+    ":dependencyDashboard",
+    ":disablePeerDependencies",
+    ":ignoreModulesAndTests",
+    ":semanticCommitTypeAll(chore)",
+    ":separateMultipleMajorReleases",
+    "group:allNonMajor",
+    "mergeConfidence:age-confidence-badges",
+    "replacements:all",
+    "workarounds:all"
+  ],
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "schedule": ["at any time"]
+    },
+    {
+      "matchSourceUrls": ["https://github.com/vitest-dev/vitest"],
+      "groupName": "vitest"
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["* 4-9 * * 6"]
+  },
+  "commitBodyTable": true,
+  "labels": ["dependencies"],
+  "reviewers": ["kevinmarrec"]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "@kevinmarrec/unocss-config",
+  "type": "module",
+  "version": "1.3.3",
+  "description": "Opinionated UnoCSS config.",
+  "author": "Kevin Marrec <kevin@marrec.io>",
+  "license": "MIT",
+  "homepage": "https://github.com/kevinmarrec/config/packages/unocss-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinmarrec/config.git"
+  },
+  "keywords": [
+    "unocss",
+    "unocss-config"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown"
+  },
+  "peerDependencies": {
+    "unocss": ">=66.0.0"
+  },
+  "dependencies": {
+    "@unocss/core": "^66.5.4",
+    "@unocss/preset-icons": "^66.5.4",
+    "@unocss/preset-web-fonts": "^66.5.4",
+    "@unocss/preset-wind4": "^66.5.4",
+    "@unocss/transformer-directives": "^66.5.4",
+    "@unocss/transformer-variant-group": "^66.5.4"
+  }
+}

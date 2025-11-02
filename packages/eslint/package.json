@@ -1,0 +1,41 @@
+{
+  "name": "@kevinmarrec/eslint-config",
+  "type": "module",
+  "version": "1.5.3",
+  "description": "Opinionated ESLint config.",
+  "author": "Kevin Marrec <kevin@marrec.io>",
+  "license": "MIT",
+  "homepage": "https://github.com/kevinmarrec/config/packages/eslint#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinmarrec/config.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.20.0"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^6.0.0",
+    "@unocss/eslint-plugin": "^66.5.4",
+    "defu": "^6.1.4",
+    "eslint-plugin-format": "^1.0.2",
+    "eslint-plugin-vuejs-accessibility": "^2.4.1",
+    "tinyglobby": "^0.2.15"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@kevinmarrec/tsconfig",
+  "version": "1.1.0",
+  "description": "Opinionated TypeScript config.",
+  "author": "Kevin Marrec <kevin@marrec.io>",
+  "license": "MIT",
+  "homepage": "https://github.com/kevinmarrec/config/packages/typescript#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinmarrec/config.git"
+  },
+  "keywords": [
+    "tsconfig",
+    "typescript"
+  ],
+  "main": "tsconfig.json"
+}

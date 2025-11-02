@@ -1,0 +1,40 @@
+{
+  "name": "@kevinmarrec/stylelint-config",
+  "type": "module",
+  "version": "1.2.2",
+  "description": "Opinionated Stylelint config.",
+  "author": "Kevin Marrec <kevin@marrec.io>",
+  "license": "MIT",
+  "homepage": "https://github.com/kevinmarrec/config/packages/stylelint#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinmarrec/config.git"
+  },
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown"
+  },
+  "peerDependencies": {
+    "stylelint": ">=16.18.0"
+  },
+  "dependencies": {
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^7.4.0",
+    "stylelint-config-recommended-scss": "^16.0.2",
+    "stylelint-order": "^7.0.0",
+    "stylelint-plugin-use-baseline": "^1.0.3"
+  }
+}

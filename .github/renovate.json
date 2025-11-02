@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>kevinmarrec/renovate-config"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["/eslint/"],
+      "groupName": "eslint"
+    },
+    {
+      "matchPackageNames": ["/stylelint/"],
+      "groupName": "stylelint"
+    },
+    {
+      "matchPackageNames": ["typescript"],
+      "groupName": "typescript"
+    },
+    {
+      "matchSourceUrls": ["https://github.com/unocss/unocss"],
+      "groupName": "unocss"
+    }
+  ]
+}

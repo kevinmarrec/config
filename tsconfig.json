@@ -1,0 +1,7 @@
+{
+  "extends": "./packages/typescript/tsconfig.json",
+  "exclude": [
+    "**/coverage/**",
+    "**/dist/**"
+  ]
+}
