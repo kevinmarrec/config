@@ -8,11 +8,52 @@ on:
 jobs:
   release:
     name: Release
-    uses: kevinmarrec/workflows/.github/workflows/release.yml@v1
-    with:
-      publish: true
-      workflow-cleanup: ci.yml
+    runs-on: ubuntu-latest
+
     permissions:
-      actions: write
       contents: write
       id-token: write
+
+    strategy:
+      matrix:
+        package:
+          - eslint
+          - stylelint
+          - typescript
+          - unocss
+
+    steps:
+      - name: Setup Bun
+        uses: kevinmarrec/workflows/setup-bun@v1
+        with:
+          fetch-all: true
+
+      - name: Build
+        run: bun --cwd packages/${{ matrix.package }} build
+
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Publish
+        working-directory: packages/${{ matrix.package }}
+        run: npm publish --access public --tag ${{ contains(github.ref_name, 'beta') && 'beta' || 'latest' }}
+
+      - name: Create release notes
+        run: bunx changelogithub
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  workflow-cleanup:
+    name: Workflow Cleanup
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: write
+
+    steps:
+      - name: Cleanup skipped workflow runs on main branch
+        run: gh run list -R $REPO --workflow ci.yml --branch main --status skipped --json databaseId --jq '.[].databaseId' | xargs -rn 1 gh run delete -R $REPO
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
