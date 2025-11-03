@@ -17,7 +17,7 @@
     },
     "packages/eslint": {
       "name": "@kevinmarrec/eslint-config",
-      "version": "1.5.3",
+      "version": "1.5.4",
       "dependencies": {
         "@antfu/eslint-config": "^6.2.0",
         "@unocss/eslint-plugin": "^66.5.4",
@@ -33,11 +33,11 @@
     },
     "packages/renovate": {
       "name": "@kevinmarrec/renovate-config",
-      "version": "1.5.3",
+      "version": "1.5.4",
     },
     "packages/stylelint": {
       "name": "@kevinmarrec/stylelint-config",
-      "version": "1.5.3",
+      "version": "1.5.4",
       "dependencies": {
         "stylelint-config-html": "^1.1.0",
         "stylelint-config-recess-order": "^7.4.0",
@@ -51,11 +51,11 @@
     },
     "packages/typescript": {
       "name": "@kevinmarrec/tsconfig",
-      "version": "1.5.3",
+      "version": "1.5.4",
     },
     "packages/unocss": {
       "name": "@kevinmarrec/unocss-config",
-      "version": "1.5.3",
+      "version": "1.5.4",
       "dependencies": {
         "@unocss/core": "^66.5.4",
         "@unocss/preset-icons": "^66.5.4",
