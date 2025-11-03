@@ -3,6 +3,10 @@
   "extends": ["github>kevinmarrec/config//packages/renovate/default"],
   "packageRules": [
     {
+      "matchPackageNames": ["/@kevinmarrec/"],
+      "groupName": "@kevinmarrec"
+    },
+    {
       "matchPackageNames": ["/eslint/"],
       "groupName": "eslint"
     },
