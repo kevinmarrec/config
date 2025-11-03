@@ -22,7 +22,7 @@
     },
     {
       "matchPackageNames": ["/@kevinmarrec/"],
-      "groupName": "@kevinmarrec"
+      "groupName": "kevinmarrec/config"
     },
     {
       "matchSourceUrls": ["https://github.com/vitest-dev/vitest"],
