@@ -3,10 +3,6 @@
   "extends": ["github>kevinmarrec/config//packages/renovate/default"],
   "packageRules": [
     {
-      "matchPackageNames": ["/@kevinmarrec/"],
-      "groupName": "@kevinmarrec"
-    },
-    {
       "matchPackageNames": ["/eslint/"],
       "groupName": "eslint"
     },
@@ -22,6 +18,5 @@
       "matchSourceUrls": ["https://github.com/unocss/unocss"],
       "groupName": "unocss"
     }
-  ],
-  "prHourlyLimit": 10
+  ]
 }
