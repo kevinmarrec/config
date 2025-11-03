@@ -7,12 +7,72 @@ on:
 
 jobs:
   release:
-    name: Release
-    uses: kevinmarrec/workflows/.github/workflows/release.yml@v1
-    with:
-      publish: true
-      workflow-cleanup: ci.yml
+    name: Release (${{ matrix.package.name }})
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    strategy:
+      matrix:
+        package:
+          - name: eslint-config
+            directory: packages/eslint
+          - name: stylelint-config
+            directory: packages/stylelint
+          - name: tsconfig
+            directory: packages/typescript
+          - name: unocss-config
+            directory: packages/unocss
+
+    steps:
+      - name: Setup Bun
+        uses: kevinmarrec/workflows/setup-bun@v1
+
+      - name: Build
+        run: bun --cwd ${{ matrix.package.directory }} build
+
+      - name: Copy LICENSE
+        run: cp LICENSE ${{ matrix.package.directory }}
+
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Publish
+        working-directory: ${{ matrix.package.directory }}
+        run: npm publish --access public
+
+  create-release-notes:
+    name: Create release notes
+    runs-on: ubuntu-latest
+    needs: release
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Setup Bun
+        uses: kevinmarrec/workflows/setup-bun@v1
+        with:
+          fetch-all: true
+          auto-install: false
+
+      - name: Create release notes
+        run: bunx changelogithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  workflow-cleanup:
+    name: Workflow Cleanup
+    runs-on: ubuntu-latest
+
     permissions:
       actions: write
-      contents: write
-      id-token: write
+
+    steps:
+      - name: Cleanup skipped workflow runs on main branch
+        run: gh run list -R $REPO --workflow ci.yml --branch main --status skipped --json databaseId --jq '.[].databaseId' | xargs -rn 1 gh run delete -R $REPO
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
