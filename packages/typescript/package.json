@@ -13,5 +13,8 @@
     "tsconfig",
     "typescript"
   ],
-  "main": "tsconfig.json"
+  "main": "tsconfig.json",
+  "scripts": {
+    "build": "echo Done"
+  }
 }
