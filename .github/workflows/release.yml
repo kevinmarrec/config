@@ -7,40 +7,59 @@ on:
 
 jobs:
   release:
-    name: Release
+    name: Release (${{ matrix.package.name }})
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: read
       id-token: write
 
     strategy:
       matrix:
         package:
-          - eslint
-          - stylelint
-          - typescript
-          - unocss
+          - name: eslint-config
+            directory: packages/eslint
+          - name: stylelint-config
+            directory: packages/stylelint
+          - name: tsconfig
+            directory: packages/typescript
+          - name: unocss-config
+            directory: packages/unocss
+
+    steps:
+      - name: Setup Bun
+        uses: kevinmarrec/workflows/setup-bun@v1
+
+      - name: Build
+        run: bun --cwd ${{ matrix.package.directory }} build
+
+      - name: Copy LICENSE
+        run: cp LICENSE ${{ matrix.package.directory }}
+
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Publish
+        working-directory: ${{ matrix.package.directory }}
+        run: npm publish --access public
+
+  create-release-notes:
+    name: Create release notes
+    runs-on: ubuntu-latest
+    needs: release
+
+    permissions:
+      contents: write
 
     steps:
       - name: Setup Bun
         uses: kevinmarrec/workflows/setup-bun@v1
         with:
           fetch-all: true
-
-      - name: Build
-        run: bun --cwd packages/${{ matrix.package }} build
-
-      - name: Update npm
-        run: npm install -g npm@latest
-
-      - name: Publish
-        working-directory: packages/${{ matrix.package }}
-        run: npm publish --access public --tag ${{ contains(github.ref_name, 'beta') && 'beta' || 'latest' }}
+          auto-install: false
 
       - name: Create release notes
         run: bunx changelogithub
-        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
