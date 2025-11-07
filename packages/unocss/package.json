@@ -31,11 +31,11 @@
     "unocss": ">=66.0.0"
   },
   "dependencies": {
-    "@unocss/core": "^66.5.4",
-    "@unocss/preset-icons": "^66.5.4",
-    "@unocss/preset-web-fonts": "^66.5.4",
-    "@unocss/preset-wind4": "^66.5.4",
-    "@unocss/transformer-directives": "^66.5.4",
-    "@unocss/transformer-variant-group": "^66.5.4"
+    "@unocss/core": "^66.5.5",
+    "@unocss/preset-icons": "^66.5.5",
+    "@unocss/preset-web-fonts": "^66.5.5",
+    "@unocss/preset-wind4": "^66.5.5",
+    "@unocss/transformer-directives": "^66.5.5",
+    "@unocss/transformer-variant-group": "^66.5.5"
   }
 }
