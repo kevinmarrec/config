@@ -28,7 +28,7 @@
     "build": "tsdown"
   },
   "peerDependencies": {
-    "unocss": ">=66.0.0"
+    "unocss": ">=66.5.0"
   },
   "dependencies": {
     "@unocss/core": "^66.5.5",
@@ -37,5 +37,8 @@
     "@unocss/preset-wind4": "^66.5.5",
     "@unocss/transformer-directives": "^66.5.5",
     "@unocss/transformer-variant-group": "^66.5.5"
+  },
+  "devDependencies": {
+    "unocss": "^66.5.5"
   }
 }
