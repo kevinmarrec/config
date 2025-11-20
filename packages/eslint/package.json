@@ -1,7 +1,7 @@
 {
   "name": "@kevinmarrec/eslint-config",
   "type": "module",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Opinionated ESLint config.",
   "author": "Kevin Marrec <kevin@marrec.io>",
   "license": "MIT",
