@@ -19,15 +19,11 @@
     {
       "matchUpdateTypes": ["major"],
       "schedule": ["at any time"]
-    },
-    {
-      "matchPackageNames": ["/@kevinmarrec/"],
-      "groupName": "kevinmarrec/config"
     }
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["* 4-9 * * 6"]
+    "schedule": ["* 4-9 1-7 * 6"]
   },
   "prHourlyLimit": 10,
   "commitBodyTable": true,
