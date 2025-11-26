@@ -1,6 +1,6 @@
 {
   "name": "@kevinmarrec/renovate-config",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "private": true,
   "description": "Kevin's Renovate config.",
   "author": "Kevin Marrec <kevin@marrec.io>",
