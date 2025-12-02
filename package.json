@@ -1,6 +1,6 @@
 {
   "name": "@kevinmarrec/config",
-  "version": "1.5.8",
+  "version": "1.5.9",
   "private": true,
   "packageManager": "bun@1.3.1",
   "author": "Kevin Marrec <kevin@marrec.io>",
