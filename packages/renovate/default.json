@@ -1,6 +1,6 @@
 {
   "description": "Default config",
-  "schedule": ["* 4-9 * * 6"],
+  "schedule": ["* 3-8 * * 6"],
   "timezone": "Europe/Paris",
   "extends": [
     ":configMigration",
@@ -23,7 +23,7 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["* 4-9 1-7 * 6"]
+    "schedule": ["* 3-8 * * 0"]
   },
   "prHourlyLimit": 10,
   "commitBodyTable": true,
