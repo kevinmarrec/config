@@ -31,11 +31,11 @@
     "eslint": ">=9.20.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^6.2.0",
+    "@antfu/eslint-config": "^6.4.2",
     "@unocss/eslint-plugin": "^66.5.10",
     "defu": "^6.1.4",
     "eslint-flat-config-utils": "^2.1.4",
-    "eslint-plugin-format": "^1.0.2",
+    "eslint-plugin-format": "^1.1.0",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "tinyglobby": "^0.2.15"
   }
