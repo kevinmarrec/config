@@ -20,7 +20,7 @@
       "name": "@kevinmarrec/eslint-config",
       "version": "1.5.9",
       "dependencies": {
-        "@antfu/eslint-config": "^6.6.1",
+        "@antfu/eslint-config": "^6.7.1",
         "@unocss/eslint-plugin": "^66.5.10",
         "defu": "^6.1.4",
         "eslint-flat-config-utils": "^2.1.4",
