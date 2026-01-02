@@ -43,7 +43,7 @@
         "stylelint-config-html": "^1.1.0",
         "stylelint-config-recess-order": "^7.4.0",
         "stylelint-config-recommended-scss": "^16.0.2",
-        "stylelint-order": "^7.0.0",
+        "stylelint-order": "^7.0.1",
         "stylelint-plugin-use-baseline": "^1.1.5",
       },
       "peerDependencies": {
@@ -1181,7 +1181,7 @@
 
     "stylelint-config-recommended-scss": ["stylelint-config-recommended-scss@16.0.2", "", { "dependencies": { "postcss-scss": "^4.0.9", "stylelint-config-recommended": "^17.0.0", "stylelint-scss": "^6.12.1" }, "peerDependencies": { "postcss": "^8.3.3", "stylelint": "^16.24.0" }, "optionalPeers": ["postcss"] }, "sha512-aUTHhPPWCvFyWaxtckJlCPaXTDFsp4pKO8evXNCsW9OwsaUWyMd6jvcUhSmfGWPrTddvzNqK4rS/UuSLcbVGdQ=="],
 
-    "stylelint-order": ["stylelint-order@7.0.0", "", { "dependencies": { "postcss": "^8.5.3", "postcss-sorting": "^9.1.0" }, "peerDependencies": { "stylelint": "^16.18.0" } }, "sha512-rSWxx0KscYfxU02wEskKXES9lkRzuuONMMNkZ7SUc6uiF3tDKm7e+sE0Ax/SBlG4TUf1sp1R6f3/SlsPGmzthg=="],
+    "stylelint-order": ["stylelint-order@7.0.1", "", { "dependencies": { "postcss": "^8.5.6", "postcss-sorting": "^9.1.0" }, "peerDependencies": { "stylelint": "^16.18.0 || ^17.0.0" } }, "sha512-GWPei1zBVDDjxM+/BmcSCiOcHNd8rSqW6FUZtqQGlTRpD0Z5nSzspzWD8rtKif5KPdzUG68DApKEV/y/I9VbTw=="],
 
     "stylelint-plugin-use-baseline": ["stylelint-plugin-use-baseline@1.1.5", "", { "dependencies": { "css-tree": "^3.1.0", "is-plain-object": "^5.0.0", "postcss": "^8.5.5", "postcss-value-parser": "^4.2.0" }, "peerDependencies": { "stylelint": "^16.0.2" } }, "sha512-rOsy5Zp2pA0YFSw9QQIQiY6HPoRyhse4zNNYSpu3crYZqxgDsdiyGVywf6OOMj3ikub2ffXaKuVelOawF+owXQ=="],
 
