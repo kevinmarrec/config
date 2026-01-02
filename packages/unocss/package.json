@@ -36,8 +36,5 @@
     "@unocss/preset-wind4": "^66.5.12",
     "@unocss/transformer-directives": "^66.5.12",
     "@unocss/transformer-variant-group": "^66.5.12"
-  },
-  "devDependencies": {
-    "unocss": "^66.5.12"
   }
 }
