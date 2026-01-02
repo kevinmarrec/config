@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`preset > should generate correct css 1`] = `
+exports[`config > should generate correct css 1`] = `
 "/* layer: theme */
 :root, :host { --font-sans: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; --font-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; --default-font-family: var(--font-sans); --default-monoFont-family: var(--font-mono); }
 /* layer: base */
@@ -9,7 +9,7 @@ exports[`preset > should generate correct css 1`] = `
 html, body, #app {height: 100%;}"
 `;
 
-exports[`preset > should generate correct css with fonts options 1`] = `
+exports[`config > should generate correct css with fonts options 1`] = `
 "/* layer: fonts */
 /* cyrillic-ext */
 @font-face {
@@ -84,7 +84,7 @@ html, body, #app {height: 100%;}
 .font-sans{font-family:var(--font-sans);}"
 `;
 
-exports[`preset > should generate correct css with icons options 1`] = `
+exports[`config > should generate correct css with icons options 1`] = `
 "/* layer: theme */
 :root, :host { --font-sans: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; --font-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; --default-font-family: var(--font-sans); --default-monoFont-family: var(--font-mono); }
 /* layer: base */
