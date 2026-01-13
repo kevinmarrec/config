@@ -1,7 +1,7 @@
 {
   "name": "@kevinmarrec/unocss-config",
   "type": "module",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Opinionated UnoCSS config.",
   "author": "Kevin Marrec <kevin@marrec.io>",
   "license": "MIT",
