@@ -21,13 +21,13 @@ export function useConfig(config: Config = {}): UserConfig<Theme> {
     presetWebFonts({
       processors: createLocalFontProcessor(),
       fonts,
-    }) as Preset<Theme>,
+    }),
   ]
 
-  const transformers = [
+  const transformers: SourceCodeTransformer[] = [
     transformerDirectives(),
     transformerVariantGroup(),
-  ] as unknown as SourceCodeTransformer[]
+  ]
 
   const preflight: Preflight<Theme> = {
     layer: 'default',
