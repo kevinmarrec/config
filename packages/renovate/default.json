@@ -19,6 +19,11 @@
     {
       "matchUpdateTypes": ["major"],
       "schedule": ["at any time"]
+    },
+    {
+      "groupName": "docker dependencies",
+      "groupSlug": "docker",
+      "matchDatasources": ["docker"]
     }
   ],
   "lockFileMaintenance": {
