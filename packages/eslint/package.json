@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^7.0.0",
-    "@unocss/eslint-plugin": "^66.5.12",
+    "@unocss/eslint-plugin": "^66.6.0",
     "defu": "^6.1.4",
     "eslint-flat-config-utils": "^2.1.4",
     "eslint-plugin-format": "^1.2.0",
