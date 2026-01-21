@@ -1,11 +1,12 @@
-import { antfu } from '@antfu/eslint-config'
+import { antfu, type ConfigNames, type TypedFlatConfigItem } from '@antfu/eslint-config'
 import defu from 'defu'
+import type { FlatConfigComposer } from 'eslint-flat-config-utils'
 import { globSync } from 'tinyglobby'
 
 type Options = Parameters<typeof antfu>[0]
 type UserConfig = Parameters<typeof antfu>[1]
 
-export function useConfig(options: Options = {}, ...userConfigs: UserConfig[]) {
+export function useConfig(options: Options = {}, ...userConfigs: UserConfig[]): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
   const [unoConfig] = globSync('**/uno.config.ts', { absolute: true })
 
   if (options.unocss !== false && unoConfig) {
