@@ -28,7 +28,7 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["* 3-8 * * 0"]
+    "schedule": ["* 3-8 8-14 * 0"]
   },
   "prHourlyLimit": 10,
   "commitBodyTable": true,
