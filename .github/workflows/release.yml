@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Setup Bun
-        uses: kevinmarrec/workflows/setup-bun@9d2e32941c6fbf76894926019c66ef428ddcc4d2 # main
+        uses: kevinmarrec/workflows/setup-bun@bf313d1678d7eefcd50f068ad4de8570242a2952 # main
 
       - name: Build
         run: bun --cwd ${{ matrix.package.directory }} build
@@ -53,7 +53,7 @@ jobs:
 
     steps:
       - name: Setup Bun
-        uses: kevinmarrec/workflows/setup-bun@9d2e32941c6fbf76894926019c66ef428ddcc4d2 # main
+        uses: kevinmarrec/workflows/setup-bun@bf313d1678d7eefcd50f068ad4de8570242a2952 # main
         with:
           fetch-all: true
           auto-install: false
