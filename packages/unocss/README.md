@@ -8,7 +8,7 @@ Opinionated [UnoCSS](https://unocss.dev) [config](https://unocss.dev/config).
 
 - Supports all [UnoCSS config](https://unocss.dev/config) options
 
-- Uses the following opinionated [UnoCSS preset](#preset) by default:
+- Uses the following opinionated config by default:
   - Extends the following official presets:
     - [UnoCSS Wind preset](https://unocss.dev/presets/wind)
     - [UnoCSS Icons preset](https://unocss.dev/presets/icons)
