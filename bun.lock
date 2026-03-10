@@ -43,7 +43,7 @@
         "stylelint-config-html": "^1.1.0",
         "stylelint-config-recess-order": "^7.6.1",
         "stylelint-config-recommended-scss": "^17.0.0",
-        "stylelint-order": "^7.0.1",
+        "stylelint-order": "^8.0.0",
         "stylelint-plugin-use-baseline": "^1.2.6",
       },
       "peerDependencies": {
@@ -1177,7 +1177,7 @@
 
     "postcss-selector-parser": ["postcss-selector-parser@7.1.1", "", { "dependencies": { "cssesc": "^3.0.0", "util-deprecate": "^1.0.2" } }, "sha512-orRsuYpJVw8LdAwqqLykBj9ecS5/cRHlI5+nvTo8LcCKmzDmqVORXtOIYEEQuL9D4BxtA1lm5isAqzQZCoQ6Eg=="],
 
-    "postcss-sorting": ["postcss-sorting@9.1.0", "", { "peerDependencies": { "postcss": "^8.4.20" } }, "sha512-Mn8KJ45HNNG6JBpBizXcyf6LqY/qyqetGcou/nprDnFwBFBLGj0j/sNKV2lj2KMOVOwdXu14aEzqJv8CIV6e8g=="],
+    "postcss-sorting": ["postcss-sorting@10.0.0", "", { "peerDependencies": { "postcss": "^8.4.20" } }, "sha512-TXbU+h6vVRW+86c/+ewhWq9k7pr7ijASTnepVhCQiC87zAOTkvB1v2dHyWP+ggstSTX/PNvjzS+IOqzejndz9w=="],
 
     "postcss-value-parser": ["postcss-value-parser@4.2.0", "", {}, "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ=="],
 
@@ -1277,7 +1277,7 @@
 
     "stylelint-config-recommended-scss": ["stylelint-config-recommended-scss@17.0.0", "", { "dependencies": { "postcss-scss": "^4.0.9", "stylelint-config-recommended": "^18.0.0", "stylelint-scss": "^7.0.0" }, "peerDependencies": { "postcss": "^8.3.3", "stylelint": "^17.0.0" }, "optionalPeers": ["postcss"] }, "sha512-VkVD9r7jfUT/dq3mA3/I1WXXk2U71rO5wvU2yIil9PW5o1g3UM7Xc82vHmuVJHV7Y8ok5K137fmW5u3HbhtTOA=="],
 
-    "stylelint-order": ["stylelint-order@7.0.1", "", { "dependencies": { "postcss": "^8.5.6", "postcss-sorting": "^9.1.0" }, "peerDependencies": { "stylelint": "^16.18.0 || ^17.0.0" } }, "sha512-GWPei1zBVDDjxM+/BmcSCiOcHNd8rSqW6FUZtqQGlTRpD0Z5nSzspzWD8rtKif5KPdzUG68DApKEV/y/I9VbTw=="],
+    "stylelint-order": ["stylelint-order@8.0.0", "", { "dependencies": { "postcss": "^8.5.8", "postcss-sorting": "^10.0.0" }, "peerDependencies": { "stylelint": "^16.18.0 || ^17.0.0" } }, "sha512-1oAwPRz6Ba8u9LPjgvdbeMjZszHhjY6DBBK+xMlS3IC89GdTsvAPpGYvW+dkn6pxc4ZaI1S959g4c8CftZbhIg=="],
 
     "stylelint-plugin-use-baseline": ["stylelint-plugin-use-baseline@1.2.6", "", { "dependencies": { "css-tree": "^3.1.0", "is-plain-object": "^5.0.0", "postcss": "^8.5.5", "postcss-value-parser": "^4.2.0" }, "peerDependencies": { "stylelint": "^16.0.2 || ^17.0.0" } }, "sha512-nKP/gJf76uAIZXZ+7TPAn2tEUWhGMpF7XPFgzJsM4oJetTo4DhbNhQ3Xd4Vxs5i3wOlqDBa4JTo7YltnzhCd/g=="],
 
@@ -1495,6 +1495,8 @@
 
     "stylelint/ignore": ["ignore@7.0.5", "", {}, "sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg=="],
 
+    "stylelint-config-recess-order/stylelint-order": ["stylelint-order@7.0.1", "", { "dependencies": { "postcss": "^8.5.6", "postcss-sorting": "^9.1.0" }, "peerDependencies": { "stylelint": "^16.18.0 || ^17.0.0" } }, "sha512-GWPei1zBVDDjxM+/BmcSCiOcHNd8rSqW6FUZtqQGlTRpD0Z5nSzspzWD8rtKif5KPdzUG68DApKEV/y/I9VbTw=="],
+
     "supports-color/has-flag": ["has-flag@4.0.0", "", {}, "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ=="],
 
     "supports-hyperlinks/supports-color": ["supports-color@10.2.2", "", {}, "sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g=="],
@@ -1528,6 +1530,8 @@
     "mlly/pkg-types/confbox": ["confbox@0.1.8", "", {}, "sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w=="],
 
     "rolldown-plugin-dts/@babel/types/@babel/helper-string-parser": ["@babel/helper-string-parser@8.0.0-rc.2", "", {}, "sha512-noLx87RwlBEMrTzncWd/FvTxoJ9+ycHNg0n8yyYydIoDsLZuxknKgWRJUqcrVkNrJ74uGyhWQzQaS3q8xfGAhQ=="],
+
+    "stylelint-config-recess-order/stylelint-order/postcss-sorting": ["postcss-sorting@9.1.0", "", { "peerDependencies": { "postcss": "^8.4.20" } }, "sha512-Mn8KJ45HNNG6JBpBizXcyf6LqY/qyqetGcou/nprDnFwBFBLGj0j/sNKV2lj2KMOVOwdXu14aEzqJv8CIV6e8g=="],
 
     "stylelint/file-entry-cache/flat-cache": ["flat-cache@6.1.20", "", { "dependencies": { "cacheable": "^2.3.2", "flatted": "^3.3.3", "hookified": "^1.15.0" } }, "sha512-AhHYqwvN62NVLp4lObVXGVluiABTHapoB57EyegZVmazN+hhGhLTn3uZbOofoTw4DSDvVCadzzyChXhOAvy8uQ=="],
 
