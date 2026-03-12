@@ -1,17 +1,13 @@
 import fs from 'node:fs/promises'
 import os from 'node:os'
+import { resolve } from 'node:path'
 
 import { createGenerator } from '@unocss/core'
-import { resolve } from 'pathe'
-import { afterEach, describe, expect, it, onTestFinished, vi } from 'vitest'
+import { describe, expect, it, onTestFinished, vi } from 'vitest'
 
 import { useConfig } from '../src'
 
 describe('config', () => {
-  afterEach(async () => {
-    vi.restoreAllMocks()
-  })
-
   it('should generate correct css', async () => {
     const uno = await createGenerator(useConfig({}))
 

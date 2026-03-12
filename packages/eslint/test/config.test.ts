@@ -1,9 +1,9 @@
 import fs from 'node:fs/promises'
 import os from 'node:os'
+import { resolve } from 'node:path'
 import process from 'node:process'
 
 import { ESLint } from 'eslint'
-import { resolve } from 'pathe'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { useConfig } from '../src'
