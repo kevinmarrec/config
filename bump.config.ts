@@ -14,9 +14,6 @@ async function bumpLockfile(newVersion: string) {
 
 export default defineConfig({
   all: true,
-  files: [
-    'package.json',
-    'packages/**/package.json',
-  ],
+  recursive: true,
   execute: ({ state: { newVersion } }) => bumpLockfile(newVersion),
 })
