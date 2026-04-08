@@ -1,4 +1,4 @@
-import type { Preflight, Preset, SourceCodeTransformer, UserConfig } from '@unocss/core'
+import type { Preset, SourceCodeTransformer, UserConfig } from '@unocss/core'
 import presetIcons, { type IconsOptions } from '@unocss/preset-icons'
 import presetWebFonts, { type WebFontsOptions } from '@unocss/preset-web-fonts'
 import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local'
@@ -29,15 +29,9 @@ export function useConfig(config: Config = {}): UserConfig<Theme> {
     transformerVariantGroup(),
   ]
 
-  const preflight: Preflight<Theme> = {
-    layer: 'default',
-    getCSS: () => 'html, body, #app {height: 100%;}',
-  }
-
   return {
     presets,
     transformers,
-    preflights: [preflight],
     ...userConfig,
   }
 }

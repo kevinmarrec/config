@@ -18,17 +18,6 @@ Opinionated [UnoCSS](https://unocss.dev) [config](https://unocss.dev/config).
     - [UnoCSS Directives transformer](https://unocss.dev/transformers/directives)
     - [UnoCSS Variant group transformer](https://unocss.dev/transformers/variant-group)
 
-  - Adds a custom layer to enforce full height on top-level elements:
-
-    ```css
-    /* layer: default */
-    html,
-    body,
-    #app {
-      height: 100%;
-    }
-    ```
-
 - Hoists `fonts` and `icons` preset options to the config level
 
 ## Usage
