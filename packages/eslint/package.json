@@ -36,6 +36,6 @@
     "eslint-flat-config-utils": "^3.1.0",
     "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-vuejs-accessibility": "^2.5.0",
-    "tinyglobby": "^0.2.15"
+    "tinyglobby": "0.2.15"
   }
 }
