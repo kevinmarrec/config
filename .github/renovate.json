@@ -15,6 +15,10 @@
       "groupName": "typescript"
     },
     {
+      "matchPackageNames": ["tinyglobby"],
+      "enabled": false
+    },
+    {
       "matchSourceUrls": ["https://github.com/unocss/unocss"],
       "groupName": "unocss"
     }
