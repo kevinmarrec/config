@@ -30,7 +30,7 @@
     "stylelint": ">=17.0.0"
   },
   "dependencies": {
-    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-html": "^2.0.0",
     "stylelint-config-recess-order": "^7.7.0",
     "stylelint-config-recommended-scss": "^17.0.1",
     "stylelint-order": "^8.1.1",
