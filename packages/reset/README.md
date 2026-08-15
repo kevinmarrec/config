@@ -2,9 +2,10 @@
 
 My personal CSS reset. Minimal, no dependencies, no build step, Baseline widely available only.
 
-It is tuned for one goal: **the same rendering on an iPad and on an Android tablet.** Every
-rule is either a fundamental — box model, margins — or a fix for something the two platforms
-disagree on. Cross-browser desktop trivia and typography opinions are deliberately absent.
+It is tuned for one goal: **the same rendering on touch, whatever the OS and the browser.** Two
+layers, and no third — every rule is either a fundamental (box model, margins), a fix for
+something the platforms disagree on, or a user-agent inconsistency worth normalising. Nothing
+is here for taste.
 
 ## Usage
 
@@ -36,11 +37,20 @@ outrank your own CSS, and import order does not matter.
 - **Makes a long press behave the same everywhere.** The engines disagree on whether a button
   is selectable — Gecko says no, Blink says yes, WebKit says it is text — so a long press
   selects a label on one platform and not the other. Buttons, labels and summaries opt out,
-  along with iOS's callout menu. Links and text fields keep both.
+  along with iOS's callout menu. Links keep both, and text fields are re-armed rather than
+  merely skipped: `user-select` inherits, and a label wrapping its input is an ancestor.
 - **Removes the iOS-only artefacts**: the landscape font bump, the grey tap flash, the
   double-tap-zoom delay.
 - **Zeroes user-agent margins**, unstyles lists, constrains media to its container.
+- **Normalises the classic user-agent inconsistencies** — `sub` and `sup` wrecking the line
+  box, monospace text shrinking, `summary` losing its marker, Firefox's red glow on invalid
+  fields. None of it is platform-specific, so none of it is behind a media query: a `sub`
+  breaks a phone layout exactly as it breaks a desktop one.
 - **Honours `prefers-reduced-motion`.**
+
+`cursor: pointer` is the only rule gated on the pointer, behind
+`@media (hover: hover) and (pointer: fine)` — `hover` carries the signal, because `pointer:
+fine` alone becomes true of an iPad the moment a trackpad is attached.
 
 ## What it does not do
 
@@ -82,5 +92,13 @@ accessibility failure, and the 16px floor above already removes the reason peopl
 ## What no reset can fix
 
 `<select>` dropdowns, date and time pickers, `<input type="file">`, scrollbars, text-selection
-handles and spell-check underlines are drawn by the platform. If they have to match, they have
-to be rebuilt.
+handles, spell-check underlines and iOS's magnifier loupe are drawn by the platform. If they
+have to match, they have to be rebuilt.
+
+Checkboxes and radios stay platform-coloured: they are excluded from `appearance: none` on
+purpose, and `accent-color` — the lever for it — is not Baseline widely available yet.
+
+## Not settled
+
+`resize`, `accent-color`, `field-sizing` and `text-wrap` would each fix a real divergence and
+are each rejected by `plugin/use-baseline` today. This file is worth revisiting as they land.
