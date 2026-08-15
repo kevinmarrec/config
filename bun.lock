@@ -10,6 +10,7 @@
         "bumpp": "^12.2.1",
         "eslint": "^10.8.1",
         "knip": "^6.32.2",
+        "stylelint": "^17.14.1",
         "tsdown": "^0.22.14",
         "typescript": "^6.0.3",
         "vitest": "^4.1.10",
@@ -33,6 +34,10 @@
     },
     "packages/renovate": {
       "name": "@kevinmarrec/renovate-config",
+      "version": "1.21.0",
+    },
+    "packages/reset": {
+      "name": "@kevinmarrec/reset.css",
       "version": "1.21.0",
     },
     "packages/stylelint": {
@@ -175,6 +180,8 @@
     "@kevinmarrec/eslint-config": ["@kevinmarrec/eslint-config@workspace:packages/eslint"],
 
     "@kevinmarrec/renovate-config": ["@kevinmarrec/renovate-config@workspace:packages/renovate"],
+
+    "@kevinmarrec/reset.css": ["@kevinmarrec/reset.css@workspace:packages/reset"],
 
     "@kevinmarrec/stylelint-config": ["@kevinmarrec/stylelint-config@workspace:packages/stylelint"],
 

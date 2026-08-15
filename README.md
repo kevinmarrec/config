@@ -11,3 +11,4 @@ Opinionated configs for my personal projects.
 - [@kevinmarrec/unocss-config](packages/unocss)
 - [@kevinmarrec/tsconfig](packages/typescript)
 - [@kevinmarrec/renovate-config](packages/renovate)
+- [@kevinmarrec/reset.css](packages/reset)
