@@ -1,0 +1,30 @@
+{
+  "name": "@kevinmarrec/reset.css",
+  "type": "module",
+  "version": "1.21.0",
+  "description": "Opinionated, dependency-free CSS reset.",
+  "author": "Kevin Marrec <kevin@marrec.io>",
+  "license": "MIT",
+  "homepage": "https://github.com/kevinmarrec/config/packages/reset#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinmarrec/config.git"
+  },
+  "keywords": [
+    "css",
+    "css-reset",
+    "reset"
+  ],
+  "sideEffects": true,
+  "exports": {
+    ".": "./reset.css"
+  },
+  "main": "./reset.css",
+  "style": "./reset.css",
+  "files": [
+    "reset.css"
+  ],
+  "scripts": {
+    "build": "echo Done"
+  }
+}

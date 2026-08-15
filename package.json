@@ -14,12 +14,13 @@
     "packages/*"
   ],
   "scripts": {
-    "check": "bun run check:eslint && bun run check:unused && bun run check:types",
-    "check:eslint": "eslint . --cache",
+    "check": "bun run lint && bun run check:unused && bun run check:types",
     "check:types": "tsc --noEmit",
     "check:unused": "knip -n",
-    "lint": "bun run check:eslint",
+    "lint": "bun run lint:eslint && bun run lint:stylelint",
+    "lint:eslint": "eslint . --cache",
     "lint:inspect": "bunx @eslint/config-inspector",
+    "lint:stylelint": "stylelint '**/*.css' --cache",
     "release": "bumpp",
     "test": "vitest",
     "test:coverage": "vitest run --coverage"
@@ -30,6 +31,7 @@
     "bumpp": "^12.2.1",
     "eslint": "^10.8.1",
     "knip": "^6.32.2",
+    "stylelint": "^17.14.1",
     "tsdown": "^0.22.14",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10"

@@ -1,0 +1,257 @@
+/*! @kevinmarrec/reset.css | MIT License | https://github.com/kevinmarrec/config */
+
+/*
+  A minimal reset, tuned for one goal: the same rendering on touch, whatever the OS and the
+  browser. Every rule below is either a fundamental (box model, margins), a fix for something
+  the platforms disagree on, or a user-agent inconsistency worth normalising. Nothing is here
+  for taste.
+
+  No font is set. `system-ui` resolves to SF on Apple and Roboto on Android, so shipping a
+  stack here would create the divergence this file exists to remove — pick a webfont in the
+  app, or accept it.
+
+  Everything is wrapped in `:where()`: zero specificity, import order irrelevant.
+
+  Baseline widely available only, enforced by `plugin/use-baseline` in
+  @kevinmarrec/stylelint-config.
+*/
+
+*,
+::before,
+::after,
+::backdrop,
+::file-selector-button {
+  box-sizing: border-box;
+}
+
+:where(html) {
+  /* Not a typography choice: `normal` resolves against the font, so it differs per platform. */
+  line-height: 1.5;
+  tab-size: 4;
+
+  /* iOS Safari grows the font when a tablet is rotated to landscape. Unprefixed
+     `text-size-adjust` is not Baseline widely available yet. */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+
+:where(body, dd, dl, figure, blockquote, fieldset, h1, h2, h3, h4, h5, h6, p, pre) {
+  margin: 0;
+}
+
+:where(ol, ul, menu) {
+  padding: 0;
+  list-style: none;
+}
+
+:where(table) {
+  text-indent: 0;
+  border-collapse: collapse;
+  border-color: currentcolor;
+}
+
+/*
+  Cross-browser normalisation. None of it is platform-specific — a `sub` blows up the line box
+  on a phone exactly as it does on a desktop — so none of it is gated behind a media query.
+*/
+:where(b, strong) {
+  font-weight: bolder;
+}
+
+:where(small) {
+  font-size: 80%;
+}
+
+:where(sub, sup) {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+:where(sub) {
+  inset-block-end: -0.25em;
+}
+
+:where(sup) {
+  inset-block-start: -0.5em;
+}
+
+:where(code, kbd, pre, samp) {
+  /* Browsers shrink monospace text to ~13px. No family is set: see the header. */
+  font-size: 1em;
+}
+
+:where(hr) {
+  block-size: 0;
+  color: inherit;
+}
+
+:where(abbr[title]) {
+  text-decoration: underline dotted;
+}
+
+:where(legend) {
+  padding: 0;
+}
+
+:where(progress) {
+  vertical-align: baseline;
+}
+
+:where(summary) {
+  /* Chrome and Safari otherwise drop the disclosure marker. */
+  display: list-item;
+}
+
+/* Firefox paints a red glow on invalid fields; the others paint nothing. */
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* Firefox's own focus ring, which is better than the one it replaces. */
+:-moz-focusring {
+  outline: auto;
+}
+
+:where(audio, canvas, embed, iframe, img, object, svg, video) {
+  display: block;
+  max-inline-size: 100%;
+}
+
+:where(img, video) {
+  block-size: auto;
+}
+
+/*
+  `display: block` above outranks the UA rule behind the `hidden` attribute, so it has to be
+  reasserted — with `!important`, the way the UA sheet does it.
+*/
+[hidden]:where(:not([hidden='until-found'])) {
+  display: none !important;
+}
+
+/*
+  Form controls are where the two platforms diverge most.
+
+  iOS imposes its own font, padding and inset shadow on inputs; Android does not. Inheriting
+  the font and flattening the box removes the gap.
+*/
+:where(button, input, optgroup, select, textarea, ::file-selector-button) {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  background: none;
+  border: none;
+}
+
+/* `font: inherit` above costs `optgroup` its weight, which is the only thing marking it. */
+:where(select:is([multiple], [size])) optgroup {
+  font-weight: bolder;
+}
+
+/*
+  The excluded types have no rendering of their own once `appearance` is off — a checkbox
+  becomes an empty box, a range loses its track. This is the one thing resets built on
+  `all: unset` get wrong.
+*/
+:where(button, select, textarea),
+:where(input:not([type='checkbox'], [type='color'], [type='file'], [type='image'], [type='radio'], [type='range'])) {
+  appearance: none;
+}
+
+/*
+  Below 16px, iOS Safari zooms the viewport when a field takes focus, and never zooms back.
+  Android does not. `max()` raises only what would trigger it, so a larger inherited size is
+  left alone — but a design wanting 14px fields will not get them on iOS either way.
+*/
+:where(input, select, textarea) {
+  font-size: max(16px, 1em);
+}
+
+:where(::placeholder) {
+  color: inherit;
+  opacity: 0.5;
+}
+
+/*
+  Date and time inputs, the worst offenders. iOS Safari gives them a different height when
+  empty and ignores `text-align`; the inner fields carry padding nowhere else has. Taken from
+  Tailwind's preflight, which is the only reset that bothers with them.
+*/
+::-webkit-date-and-time-value {
+  min-height: 1lh;
+  text-align: inherit;
+}
+
+::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+::-webkit-datetime-edit,
+::-webkit-datetime-edit-year-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-minute-field,
+::-webkit-datetime-edit-second-field,
+::-webkit-datetime-edit-millisecond-field,
+::-webkit-datetime-edit-meridiem-field {
+  padding-block: 0;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+:where(a, button, label, select, summary, [role='button']) {
+  /* Kills the 300ms double-tap-zoom delay, and the grey flash on tap in iOS Safari. */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+  A long press on a control must not start a text selection or open iOS's callout menu. The
+  engines disagree on the default — Gecko `none`, Blink `auto`, WebKit `text` — so it has to
+  be stated outright.
+
+  Links are excluded: copying one is the point. Text fields have to be re-armed rather than
+  merely skipped — `user-select` inherits, and a label wrapping its input is an ancestor.
+
+  Prefixed only — unprefixed `user-select` is not Baseline widely available yet, and the two
+  prefixes cover every engine that needs telling.
+*/
+:where(button, label, summary, [role='button']) {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+:where(input, textarea) {
+  -moz-user-select: text;
+  -webkit-user-select: auto;
+}
+
+/*
+  The only rule here that a pointer really governs. Note it is `hover` that carries the
+  signal: `pointer: fine` alone is true of an iPad the moment a trackpad is attached.
+*/
+@media (hover: hover) and (pointer: fine) {
+  :where(a, button, label, select, summary, [role='button']) {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(*, ::before, ::after) {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

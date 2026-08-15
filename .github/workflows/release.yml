@@ -19,6 +19,8 @@ jobs:
         package:
           - name: eslint-config
             directory: packages/eslint
+          - name: reset.css
+            directory: packages/reset
           - name: stylelint-config
             directory: packages/stylelint
           - name: tsconfig
