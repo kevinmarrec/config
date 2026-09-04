@@ -24,6 +24,11 @@
       "groupName": "docker dependencies",
       "groupSlug": "docker",
       "matchDatasources": ["docker"]
+    },
+    {
+      "description": "vitest and @vitest/coverage-v8 pin each other exactly, so a major that moves only one of them can never go green.",
+      "extends": ["monorepo:vitest"],
+      "groupName": "vitest"
     }
   ],
   "lockFileMaintenance": {
