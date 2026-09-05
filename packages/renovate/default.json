@@ -29,6 +29,13 @@
       "description": "vitest and @vitest/coverage-v8 pin each other exactly, so a major that moves only one of them can never go green.",
       "extends": ["monorepo:vitest"],
       "groupName": "vitest"
+    },
+    {
+      "description": "Auto-merge kevinmarrec/workflows updates, as they are self-owned and CI-verified. Not in the workflows repo itself, where the ref pins that repo's own main: every merge moves main, so the digest can never settle.",
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["kevinmarrec/workflows", "kevinmarrec/workflows/**"],
+      "matchRepositories": ["!kevinmarrec/workflows"],
+      "automerge": true
     }
   ],
   "lockFileMaintenance": {
