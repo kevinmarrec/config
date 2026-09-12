@@ -26,11 +26,11 @@
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@types/bun": "^1.4.1",
+    "@types/bun": "^1.4.2",
     "@vitest/coverage-v8": "^5.0.0",
     "bumpp": "^12.3.0",
     "eslint": "^10.10.0",
-    "knip": "^6.34.0",
+    "knip": "^6.35.1",
     "stylelint": "^17.15.0",
     "tsdown": "^0.23.0",
     "typescript": "^6.0.3",
