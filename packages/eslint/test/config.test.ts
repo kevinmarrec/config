@@ -160,6 +160,19 @@ describe('config', async () => {
     `)
   })
 
+  it('should lint agent rules and skills', async () => {
+    const eslint = new ESLint({
+      overrideConfigFile: true,
+      overrideConfig: await useConfig(),
+    })
+
+    for (const filePath of ['.agents/rules/foo.md', '.claude/rules/foo.md', '.codex/skills/foo.md']) {
+      const [{ warningCount }] = await eslint.lintText('# Foo\n', { filePath })
+
+      expect(warningCount).toBe(0)
+    }
+  })
+
   it('should load antfu/unocss lint rules, when uno.config.ts file is found', async () => {
     await fs.writeFile(resolve(tmpDir, 'uno.config.ts'), `export default {}`)
 
