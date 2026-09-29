@@ -6,6 +6,14 @@ import { globSync } from 'tinyglobby'
 type Options = Parameters<typeof antfu>[0]
 
 export function useConfig(options: Options = {}): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
+  const userIgnores = options.ignores
+
+  // Agent rules and skills are tracked docs, so lint them unlike the antfu preset.
+  options.ignores = (defaults) => {
+    const ignores = defaults.filter(glob => !['**/.agents', '**/.claude', '**/.*/skills'].includes(glob))
+    return typeof userIgnores === 'function' ? userIgnores(ignores) : [...ignores, ...userIgnores ?? []]
+  }
+
   const [unoConfig] = globSync('**/uno.config.ts', { absolute: true })
 
   if (options.unocss !== false && unoConfig) {
@@ -21,7 +29,6 @@ export function useConfig(options: Options = {}): FlatConfigComposer<TypedFlatCo
 
   return antfu(defu<NonNullable<Options>, Options[]>(options, {
     formatters: true,
-    ignores: options.ignores,
     vue: {
       a11y: true,
       overrides: {
