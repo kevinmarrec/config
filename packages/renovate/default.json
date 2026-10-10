@@ -31,11 +31,21 @@
       "groupName": "vitest"
     },
     {
+      "description": "Auto-merge non-major updates and lock file maintenance. Relies on main requiring CI checks: repos without branch protection must set platformAutomerge to false, or GitHub merges before checks finish.",
+      "matchUpdateTypes": ["minor", "patch", "digest", "pin", "lockFileMaintenance"],
+      "automerge": true
+    },
+    {
       "description": "Auto-merge kevinmarrec/workflows updates, as they are self-owned and CI-verified. Not in the workflows repo itself, where the ref pins that repo's own main: every merge moves main, so the digest can never settle.",
       "matchManagers": ["github-actions"],
       "matchPackageNames": ["kevinmarrec/workflows", "kevinmarrec/workflows/**"],
-      "matchRepositories": ["!kevinmarrec/workflows"],
       "automerge": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["kevinmarrec/workflows", "kevinmarrec/workflows/**"],
+      "matchRepositories": ["kevinmarrec/workflows"],
+      "automerge": false
     }
   ],
   "lockFileMaintenance": {
