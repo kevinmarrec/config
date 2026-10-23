@@ -1,1 +1,3 @@
-export default { extends: ['./packages/stylelint/src/index.ts'] }
+export default {
+  extends: ['./packages/stylelint/src/index.ts'],
+}
