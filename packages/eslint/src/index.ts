@@ -11,7 +11,12 @@ export function useConfig(options: Options = {}): FlatConfigComposer<TypedFlatCo
   // Agent rules and skills are tracked docs, so lint them unlike the antfu preset.
   options.ignores = (defaults) => {
     const ignores = defaults.filter(glob => !['**/.agents', '**/.claude', '**/.*/skills'].includes(glob))
-    return typeof userIgnores === 'function' ? userIgnores(ignores) : [...ignores, ...userIgnores ?? []]
+    return typeof userIgnores === 'function'
+      ? userIgnores(ignores)
+      : [
+          ...ignores,
+          ...userIgnores ?? [],
+        ]
   }
 
   const [unoConfig] = globSync('**/uno.config.ts', { absolute: true })
@@ -33,17 +38,23 @@ export function useConfig(options: Options = {}): FlatConfigComposer<TypedFlatCo
       a11y: true,
       overrides: {
         'vue/no-unused-properties': 'error',
-        'vue-a11y/label-has-for': ['error', {
-          required: {
-            some: ['nesting', 'id'],
+        'vue-a11y/label-has-for': [
+          'error',
+          {
+            required: {
+              some: ['nesting', 'id'],
+            },
           },
-        }],
+        ],
       },
     },
     rules: {
       'antfu/if-newline': ['off'],
       'import/consistent-type-specifier-style': ['off'],
-      'import/no-duplicates': ['error', { 'prefer-inline': true }],
+      'import/no-duplicates': [
+        'error',
+        { 'prefer-inline': true },
+      ],
     },
     settings: {
       unocss: {
@@ -55,18 +66,28 @@ export function useConfig(options: Options = {}): FlatConfigComposer<TypedFlatCo
       'antfu/perfectionist/setup',
       {
         rules: {
-          'perfectionist/sort-imports': ['error', {
-            groups: [
-              ['value-builtin', 'type-builtin'],
-              ['value-external', 'type-external'],
-              ['value-internal', 'type-internal'],
-              ['value-parent', 'type-parent', 'value-sibling', 'type-sibling', 'value-index', 'type-index'],
-              'side-effect',
-              'ts-equals-import',
-              'unknown',
-            ],
-            type: 'natural',
-          }],
+          'perfectionist/sort-imports': [
+            'error',
+            {
+              groups: [
+                ['value-builtin', 'type-builtin'],
+                ['value-external', 'type-external'],
+                ['value-internal', 'type-internal'],
+                [
+                  'value-parent',
+                  'type-parent',
+                  'value-sibling',
+                  'type-sibling',
+                  'value-index',
+                  'type-index',
+                ],
+                'side-effect',
+                'ts-equals-import',
+                'unknown',
+              ],
+              type: 'natural',
+            },
+          ],
         },
       },
     )

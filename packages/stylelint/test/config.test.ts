@@ -36,7 +36,9 @@ describe('config', () => {
 
   it('should ignore files, given "ignores" option', async () => {
     const { results: [{ ignored }] } = await stylelint.lint({
-      config: useConfig({ ignoreFiles: ['**/*.foo'] }),
+      config: useConfig({
+        ignoreFiles: ['**/*.foo'],
+      }),
       codeFilename: 'file.foo',
       code: '',
     })
