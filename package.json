@@ -2,7 +2,7 @@
   "name": "@kevinmarrec/config",
   "version": "1.27.0",
   "private": true,
-  "packageManager": "bun@1.4.3",
+  "packageManager": "bun@1.4.4",
   "author": "Kevin Marrec <kevin@marrec.io>",
   "license": "MIT",
   "homepage": "https://github.com/kevinmarrec/config#readme",
@@ -26,13 +26,13 @@
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@types/bun": "^1.4.3",
+    "@types/bun": "^1.4.4",
     "@vitest/coverage-v8": "^5.0.5",
     "bumpp": "^12.3.0",
     "eslint": "^10.13.0",
-    "knip": "^6.41.0",
+    "knip": "^6.43.0",
     "stylelint": "^17.16.0",
-    "tsdown": "^0.23.1",
+    "tsdown": "^0.23.2",
     "typescript": "^6.0.3",
     "vitest": "^5.0.5"
   }
