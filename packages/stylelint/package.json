@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "stylelint-config-html": "^2.0.0",
-    "stylelint-config-recess-order": "^7.10.1",
+    "stylelint-config-recess-order": "^7.10.2",
     "stylelint-config-recommended-scss": "^18.0.0",
     "stylelint-order": "^9.0.0",
-    "stylelint-plugin-use-baseline": "^1.4.8"
+    "stylelint-plugin-use-baseline": "^1.5.0"
   }
 }
